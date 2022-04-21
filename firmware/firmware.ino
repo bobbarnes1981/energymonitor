@@ -4,11 +4,11 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-#define ONE_WIRE_BUS 2
+#define ONE_WIRE_BUS 2  // DS18B20 on D2 arduino nano
 
-#define LED 13
+#define LED 13          // arduino nano built in LED
 
-#define LCD_ADDR 0x27
+#define LCD_ADDR 0x27   // LCD I2C address (arduino nano connections SCL A5, SDA A4)
 #define LCD_ROW 2
 #define LCD_COL 16
 
