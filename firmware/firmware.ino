@@ -20,6 +20,10 @@ DallasTemperature sensors(&oneWire);
 
 LiquidCrystal_I2C lcd(LCD_ADDR, LCD_COL, LCD_ROW);
 
+#define BUFFER_MAX 8
+char buffer[BUFFER_MAX];
+int bufferIndex = 0;
+
 void setup() {
   pinMode(LED, OUTPUT);
   
@@ -31,17 +35,50 @@ void setup() {
 
   sensors.begin();
   sensors.setWaitForConversion(false);
+
+  Serial.begin(9600);
 }
 
-void loop() {
-  digitalWrite(LED, millis() % 1000 > 750); // flash LED 250ms on, 750ms off
-
+void updateTemperature() {
   sensors.requestTemperatures();
-
   float temp = sensors.getTempCByIndex(0);
   if (temp != lastTemp) {
     lcd.setCursor(0, 1);
     lcd.print(String(temp) + "c");
     lastTemp = temp;
+  }
+}
+
+bool haveCommand() {
+  if (Serial.available() > 0) {
+    int b = Serial.read();
+    buffer[bufferIndex] = (char)b;
+    bufferIndex++;
+    if (b == '\n') {
+      return true;
+    }
+  }
+  return false;
+}
+
+void processCommand() {
+  switch(buffer[0]) {
+    case 't':
+      Serial.print("t:" + String(lastTemp) + "\n");
+      break;
+    default:
+      Serial.print("e:" + String(buffer[0]) + "\n");
+      break;
+  }
+  bufferIndex = 0;
+}
+
+void loop() {
+  digitalWrite(LED, millis() % 1000 > 750); // flash LED 250ms on, 750ms off
+
+  updateTemperature();
+
+  if (haveCommand()) {
+    processCommand();
   }
 }
