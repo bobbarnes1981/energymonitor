@@ -1,5 +1,3 @@
-#define READVCC_CALIBRATION_CONST 811752L
-
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
