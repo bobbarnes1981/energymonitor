@@ -1,3 +1,4 @@
 LiquidCrystal I2C
 DallasTemperature
 OneWire
+EmonLib

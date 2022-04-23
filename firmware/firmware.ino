@@ -1,8 +1,12 @@
+#define READVCC_CALIBRATION_CONST 811752L
+
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
 #include <OneWire.h>
 #include <DallasTemperature.h>
+
+#include "EmonLib.h"
 
 #define ONE_WIRE_BUS 2  // DS18B20 on D2 arduino nano
 
@@ -12,7 +16,15 @@
 #define LCD_ROW 2
 #define LCD_COL 16
 
-float lastTemp = 0;
+#define V_PIN 3
+#define V_CAL 216.0
+#define V_PHA 1.7
+
+#define HALF_WAVELENGTHS 20
+#define CALC_TIMEOUT 2000
+
+float temperature = 0;
+float voltage = 0;
 
 OneWire oneWire(ONE_WIRE_BUS); 
 
@@ -20,9 +32,7 @@ DallasTemperature sensors(&oneWire);
 
 LiquidCrystal_I2C lcd(LCD_ADDR, LCD_COL, LCD_ROW);
 
-#define BUFFER_MAX 8
-char buffer[BUFFER_MAX];
-int bufferIndex = 0;
+EnergyMonitor emon;
 
 void setup() {
   pinMode(LED, OUTPUT);
@@ -34,51 +44,25 @@ void setup() {
   lcd.print("Energy Monitor");
 
   sensors.begin();
-  sensors.setWaitForConversion(false);
+  sensors.setWaitForConversion(true);
+
+  emon.voltage(V_PIN, V_CAL, V_PHA);
 
   Serial.begin(9600);
 }
 
-void updateTemperature() {
-  sensors.requestTemperatures();
-  float temp = sensors.getTempCByIndex(0);
-  if (temp != lastTemp) {
-    lcd.setCursor(0, 1);
-    lcd.print(String(temp) + "c");
-    lastTemp = temp;
-  }
-}
-
-bool haveCommand() {
-  if (Serial.available() > 0) {
-    int b = Serial.read();
-    buffer[bufferIndex] = (char)b;
-    bufferIndex++;
-    if (b == '\n') {
-      return true;
-    }
-  }
-  return false;
-}
-
-void processCommand() {
-  switch(buffer[0]) {
-    case 't':
-      Serial.print("t:" + String(lastTemp) + "\n");
-      break;
-    default:
-      Serial.print("e:" + String(buffer[0]) + "\n");
-      break;
-  }
-  bufferIndex = 0;
-}
-
 void loop() {
-  digitalWrite(LED, millis() % 1000 > 750); // flash LED 250ms on, 750ms off
+  sensors.requestTemperatures();
+  temperature = sensors.getTempCByIndex(0);
+  lcd.setCursor(0, 1);
+  lcd.print(String(temperature) + "c");
+  Serial.print("t:" + String(temperature) + "\n");
 
-  updateTemperature();
+  emon.calcVI(HALF_WAVELENGTHS, CALC_TIMEOUT);
+  voltage = emon.Vrms;
+  lcd.setCursor(8, 1);
+  lcd.print(String(voltage) + "v");
+  Serial.print("v:" + String(voltage) + "\n");
 
-  if (haveCommand()) {
-    processCommand();
-  }
+  delay(1000);
 }
