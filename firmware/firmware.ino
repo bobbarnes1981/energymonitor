@@ -21,8 +21,7 @@
 #define HALF_WAVELENGTHS 20
 #define CALC_TIMEOUT 2000
 
-float temperature = 0;
-float voltage = 0;
+#define BUFFER_MAX 8
 
 OneWire oneWire(ONE_WIRE_BUS); 
 
@@ -31,6 +30,15 @@ DallasTemperature sensors(&oneWire);
 LiquidCrystal_I2C lcd(LCD_ADDR, LCD_COL, LCD_ROW);
 
 EnergyMonitor emon;
+
+float monVoltage = 0.0;
+float monCurrent = 0.0;
+float monTemperature = 0.0;
+
+char buffer[BUFFER_MAX];
+int bufferIndex = 0;
+
+unsigned long startMillis;
 
 void setup() {
   pinMode(LED, OUTPUT);
@@ -49,18 +57,51 @@ void setup() {
   Serial.begin(9600);
 }
 
-void loop() {
+void updateTemperature() {
   sensors.requestTemperatures();
-  temperature = sensors.getTempCByIndex(0);
-  lcd.setCursor(0, 1);
-  lcd.print(String(temperature) + "c");
-  Serial.print("t:" + String(temperature) + "\n");
+  monTemperature = sensors.getTempCByIndex(0);
+}
 
+void updateSensors() {
   emon.calcVI(HALF_WAVELENGTHS, CALC_TIMEOUT);
-  voltage = emon.Vrms;
-  lcd.setCursor(8, 1);
-  lcd.print(String(voltage) + "v");
-  Serial.print("v:" + String(voltage) + "\n");
+  monVoltage = emon.Vrms;
+}
 
-  delay(1000);
+void updateLcd() {
+  lcd.setCursor(0, 1);
+  lcd.print(String(monTemperature) + "c");
+
+  lcd.setCursor(8, 1);
+  lcd.print(String(monVoltage) + "v");
+}
+
+void loop() {
+  startMillis = millis();
+
+  updateTemperature();
+  updateSensors();
+  updateLcd();
+
+  while (Serial.available()) {
+    int b = Serial.read();
+    buffer[bufferIndex] = (char)b;
+    bufferIndex++;
+    if (b == "\n" || bufferIndex >= BUFFER_MAX) {
+      break;
+    }
+  }
+
+  if (bufferIndex > 0) {
+    switch (buffer[0]) {
+      case 's':
+        Serial.print("t:" + String(monTemperature) + ",");
+        Serial.print("v:" + String(monVoltage) + ",");
+        Serial.print("i:UNKNOWN\n");
+        break;
+      default:
+        Serial.print("error!");
+        break;
+    }
+    bufferIndex = 0;
+  }
 }
