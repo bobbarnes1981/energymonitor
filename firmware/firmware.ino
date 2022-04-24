@@ -14,7 +14,7 @@
 #define LCD_ROW 2
 #define LCD_COL 16
 
-#define V_PIN 3
+#define V_PIN A3
 #define V_CAL 216.0
 #define V_PHA 1.7
 
