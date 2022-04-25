@@ -79,39 +79,6 @@ $EndComp
 Wire Wire Line
 	2250 2150 2250 2000
 $Comp
-L Device:CP C?
-U 1 1 6260BDA8
-P 3350 2500
-F 0 "C?" H 3468 2546 50  0000 L CNN
-F 1 "10uf" H 3468 2455 50  0000 L CNN
-F 2 "" H 3388 2350 50  0001 C CNN
-F 3 "~" H 3350 2500 50  0001 C CNN
-	1    3350 2500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 6260C4FE
-P 3100 2200
-F 0 "R?" V 2893 2200 50  0000 C CNN
-F 1 "10k" V 2984 2200 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3030 2200 50  0001 C CNN
-F 3 "~" H 3100 2200 50  0001 C CNN
-	1    3100 2200
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 6260C5C9
-P 3600 2200
-F 0 "R?" V 3393 2200 50  0000 C CNN
-F 1 "10k" V 3484 2200 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3530 2200 50  0001 C CNN
-F 3 "~" H 3600 2200 50  0001 C CNN
-	1    3600 2200
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 6260C8A0
 P 2800 1450
@@ -137,52 +104,6 @@ Wire Wire Line
 	2250 2000 2250 1900
 NoConn ~ 2450 1400
 NoConn ~ 2450 1500
-$Comp
-L power:GND #PWR0104
-U 1 1 62619158
-P 3350 2800
-F 0 "#PWR0104" H 3350 2550 50  0001 C CNN
-F 1 "GND" H 3355 2627 50  0000 C CNN
-F 2 "" H 3350 2800 50  0001 C CNN
-F 3 "" H 3350 2800 50  0001 C CNN
-	1    3350 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR0105
-U 1 1 62619507
-P 3900 2200
-F 0 "#PWR0105" H 3900 2050 50  0001 C CNN
-F 1 "+5V" V 3915 2328 50  0000 L CNN
-F 2 "" H 3900 2200 50  0001 C CNN
-F 3 "" H 3900 2200 50  0001 C CNN
-	1    3900 2200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3250 2200 3350 2200
-Wire Wire Line
-	3350 2350 3350 2200
-Connection ~ 3350 2200
-Wire Wire Line
-	3350 2200 3450 2200
-Wire Wire Line
-	3900 2200 3750 2200
-Wire Wire Line
-	2950 2200 2750 2200
-Wire Wire Line
-	2750 2200 2750 2750
-Wire Wire Line
-	2750 2750 3350 2750
-Wire Wire Line
-	3350 2750 3350 2650
-Wire Wire Line
-	3350 2800 3350 2750
-Connection ~ 3350 2750
-Wire Wire Line
-	3350 2200 3350 1600
-Wire Wire Line
-	3350 1600 2800 1600
 Connection ~ 2800 1600
 Text Label 3900 1300 0    50   ~ 0
 current-sense
@@ -211,78 +132,78 @@ $EndComp
 $Comp
 L Device:R R?
 U 1 1 6262BC5E
-P 3100 4300
-F 0 "R?" V 2893 4300 50  0000 C CNN
-F 1 "10k" V 2984 4300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3030 4300 50  0001 C CNN
-F 3 "~" H 3100 4300 50  0001 C CNN
-	1    3100 4300
+P 9400 4450
+F 0 "R?" V 9193 4450 50  0000 C CNN
+F 1 "10k" V 9284 4450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9330 4450 50  0001 C CNN
+F 3 "~" H 9400 4450 50  0001 C CNN
+	1    9400 4450
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 6262C6E4
-P 3600 4300
-F 0 "R?" V 3393 4300 50  0000 C CNN
-F 1 "10k" V 3484 4300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3530 4300 50  0001 C CNN
-F 3 "~" H 3600 4300 50  0001 C CNN
-	1    3600 4300
+P 9900 4450
+F 0 "R?" V 9693 4450 50  0000 C CNN
+F 1 "10k" V 9784 4450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9830 4450 50  0001 C CNN
+F 3 "~" H 9900 4450 50  0001 C CNN
+	1    9900 4450
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:CP C?
 U 1 1 6262CCE6
-P 3350 4600
-F 0 "C?" H 3468 4646 50  0000 L CNN
-F 1 "10uf" H 3468 4555 50  0000 L CNN
-F 2 "" H 3388 4450 50  0001 C CNN
-F 3 "~" H 3350 4600 50  0001 C CNN
-	1    3350 4600
+P 9650 4750
+F 0 "C?" H 9768 4796 50  0000 L CNN
+F 1 "10uf" H 9768 4705 50  0000 L CNN
+F 2 "" H 9688 4600 50  0001 C CNN
+F 3 "~" H 9650 4750 50  0001 C CNN
+	1    9650 4750
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR0106
 U 1 1 6262D570
-P 3900 4300
-F 0 "#PWR0106" H 3900 4150 50  0001 C CNN
-F 1 "+5V" V 3915 4428 50  0000 L CNN
-F 2 "" H 3900 4300 50  0001 C CNN
-F 3 "" H 3900 4300 50  0001 C CNN
-	1    3900 4300
+P 10200 4450
+F 0 "#PWR0106" H 10200 4300 50  0001 C CNN
+F 1 "+5V" V 10215 4578 50  0000 L CNN
+F 2 "" H 10200 4450 50  0001 C CNN
+F 3 "" H 10200 4450 50  0001 C CNN
+	1    10200 4450
 	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR0107
 U 1 1 6262E712
-P 3350 5000
-F 0 "#PWR0107" H 3350 4750 50  0001 C CNN
-F 1 "GND" H 3355 4827 50  0000 C CNN
-F 2 "" H 3350 5000 50  0001 C CNN
-F 3 "" H 3350 5000 50  0001 C CNN
-	1    3350 5000
+P 9650 5150
+F 0 "#PWR0107" H 9650 4900 50  0001 C CNN
+F 1 "GND" H 9655 4977 50  0000 C CNN
+F 2 "" H 9650 5150 50  0001 C CNN
+F 3 "" H 9650 5150 50  0001 C CNN
+	1    9650 5150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3750 4300 3900 4300
+	10050 4450 10200 4450
 Wire Wire Line
-	3450 4300 3350 4300
+	9750 4450 9650 4450
 Wire Wire Line
-	3350 4450 3350 4300
-Connection ~ 3350 4300
+	9650 4600 9650 4450
+Connection ~ 9650 4450
 Wire Wire Line
-	3350 4300 3250 4300
+	9650 4450 9550 4450
 Wire Wire Line
-	2950 4300 2750 4300
+	9250 4450 9050 4450
 Wire Wire Line
-	2750 4300 2750 4900
+	9050 4450 9050 5050
 Wire Wire Line
-	2750 4900 3350 4900
+	9050 5050 9650 5050
 Wire Wire Line
-	3350 4900 3350 5000
+	9650 5050 9650 5150
 Wire Wire Line
-	3350 4900 3350 4750
-Connection ~ 3350 4900
+	9650 5050 9650 4900
+Connection ~ 9650 5050
 Text Label 3900 3450 0    50   ~ 0
 voltage-sense
 $Comp
@@ -290,7 +211,7 @@ L Device:R R?
 U 1 1 62631A9B
 P 2750 3450
 F 0 "R?" V 2543 3450 50  0000 C CNN
-F 1 "10k" V 2634 3450 50  0000 C CNN
+F 1 "100k" V 2634 3450 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2680 3450 50  0001 C CNN
 F 3 "~" H 2750 3450 50  0001 C CNN
 	1    2750 3450
@@ -301,23 +222,12 @@ L Device:R R?
 U 1 1 62631FC5
 P 2750 3650
 F 0 "R?" V 2543 3650 50  0000 C CNN
-F 1 "100k" V 2634 3650 50  0000 C CNN
+F 1 "10k" V 2634 3650 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2680 3650 50  0001 C CNN
 F 3 "~" H 2750 3650 50  0001 C CNN
 	1    2750 3650
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2400 3450 2500 3450
-Wire Wire Line
-	3350 4300 3350 3200
-Wire Wire Line
-	3350 3200 2500 3200
-Wire Wire Line
-	2500 3200 2500 3450
-Connection ~ 2500 3450
-Wire Wire Line
-	2500 3450 2600 3450
 Wire Wire Line
 	2900 3450 3000 3450
 Wire Wire Line
@@ -328,16 +238,14 @@ Connection ~ 3000 3450
 Wire Wire Line
 	3000 3450 3900 3450
 Wire Wire Line
-	2400 3650 2600 3650
+	2400 3650 2500 3650
 Text Notes 700  750  0    50   ~ 0
 https://learn.openenergymonitor.org/electricity-monitoring/ctac/how-to-build-an-arduino-energy-monitor
-Text Notes 3750 4650 0    50   ~ 0
-Voltage divider (2.5v)
-Text Notes 3750 2550 0    50   ~ 0
+Text Notes 10050 4800 0    50   ~ 0
 Voltage divider (2.5v)
 Text Notes 3100 1450 0    50   ~ 0
 Burden resistor
-Text Notes 2400 3800 0    50   ~ 0
+Text Notes 2850 3800 0    50   ~ 0
 Step down voltage divider
 Text Label 6750 1700 2    50   ~ 0
 1wire-bus
@@ -444,4 +352,106 @@ Text Notes 1750 3850 0    50   ~ 0
 9v AC
 Text Notes 5050 3800 0    50   ~ 0
 DS18B20
+$Comp
+L Amplifier_Operational:LM358 U?
+U 1 1 6278D4CE
+P 6350 4450
+F 0 "U?" H 6350 4817 50  0000 C CNN
+F 1 "LM358" H 6350 4726 50  0000 C CNN
+F 2 "" H 6350 4450 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 6350 4450 50  0001 C CNN
+	1    6350 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:LM358 U?
+U 2 1 6278EB53
+P 3750 6350
+F 0 "U?" H 3750 6717 50  0000 C CNN
+F 1 "LM358" H 3750 6626 50  0000 C CNN
+F 2 "" H 3750 6350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 3750 6350 50  0001 C CNN
+	2    3750 6350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:LM358 U?
+U 3 1 6278FD5E
+P 8750 2250
+F 0 "U?" H 8708 2296 50  0000 L CNN
+F 1 "LM358" H 8708 2205 50  0000 L CNN
+F 2 "" H 8750 2250 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 8750 2250 50  0001 C CNN
+	3    8750 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 4450 6950 4450
+Wire Wire Line
+	6950 4450 6950 4800
+Wire Wire Line
+	6950 4800 5800 4800
+Wire Wire Line
+	5800 4800 5800 4550
+Wire Wire Line
+	5800 4550 6050 4550
+$Comp
+L power:GND #PWR?
+U 1 1 627A363E
+P 8650 2700
+F 0 "#PWR?" H 8650 2450 50  0001 C CNN
+F 1 "GND" H 8655 2527 50  0000 C CNN
+F 2 "" H 8650 2700 50  0001 C CNN
+F 3 "" H 8650 2700 50  0001 C CNN
+	1    8650 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 627A3F4D
+P 8650 1800
+F 0 "#PWR?" H 8650 1650 50  0001 C CNN
+F 1 "+5V" H 8665 1973 50  0000 C CNN
+F 2 "" H 8650 1800 50  0001 C CNN
+F 3 "" H 8650 1800 50  0001 C CNN
+	1    8650 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8650 1800 8650 1950
+Wire Wire Line
+	8650 2550 8650 2700
+NoConn ~ 3450 6250
+NoConn ~ 3450 6450
+NoConn ~ 4050 6350
+Text Label 7150 4450 0    50   ~ 0
+buffered-midpoint
+Text Label 5700 4350 2    50   ~ 0
+midpoint
+Wire Wire Line
+	5700 4350 6050 4350
+Wire Wire Line
+	7150 4450 6950 4450
+Connection ~ 6950 4450
+Text Label 10050 3900 0    50   ~ 0
+midpoint
+Wire Wire Line
+	10050 3900 9650 3900
+Wire Wire Line
+	9650 3900 9650 4450
+Text Label 3900 3900 0    50   ~ 0
+buffered-midpoint
+Text Label 3900 1600 0    50   ~ 0
+buffered-midpoint
+Wire Wire Line
+	2800 1600 3900 1600
+Wire Wire Line
+	2500 3900 3900 3900
+Wire Wire Line
+	2400 3450 2600 3450
+Wire Wire Line
+	2500 3900 2500 3650
+Connection ~ 2500 3650
+Wire Wire Line
+	2500 3650 2600 3650
 $EndSCHEMATC
