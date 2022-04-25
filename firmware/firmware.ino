@@ -18,6 +18,9 @@
 #define V_CAL 216.0
 #define V_PHA 1.7
 
+#define I_PIN A2
+#define I_CAL 55.3
+
 #define HALF_WAVELENGTHS 20
 #define CALC_TIMEOUT 2000
 
@@ -34,6 +37,9 @@ EnergyMonitor emon;
 float monVoltage = 0.0;
 float monCurrent = 0.0;
 float monTemperature = 0.0;
+float monAPower = 0.0;
+float monRPower = 0.0;
+float monPowerF = 0.0;
 
 char buffer[BUFFER_MAX];
 int bufferIndex = 0;
@@ -53,6 +59,7 @@ void setup() {
   sensors.setWaitForConversion(true);
 
   emon.voltage(V_PIN, V_CAL, V_PHA);
+  emon.current(I_PIN, I_CAL);
 
   Serial.begin(9600);
 }
@@ -65,14 +72,25 @@ void updateTemperature() {
 void updateSensors() {
   emon.calcVI(HALF_WAVELENGTHS, CALC_TIMEOUT);
   monVoltage = emon.Vrms;
+  monCurrent = emon.Irms;
+  monAPower = emon.apparentPower;
+  monRPower = emon.realPower;
+  monPowerF = emon.powerFactor;
 }
 
 void updateLcd() {
+  lcd.clear();
   lcd.setCursor(0, 1);
   lcd.print(String(monTemperature) + "c");
 
   lcd.setCursor(8, 1);
   lcd.print(String(monVoltage) + "v");
+
+  lcd.setCursor(0, 0);
+  lcd.print(String(monCurrent) + "A");
+
+  lcd.setCursor(8, 0);
+  lcd.print(String(monAPower) + "W");
 }
 
 void loop() {
@@ -96,7 +114,10 @@ void loop() {
       case 's':
         Serial.print("t:" + String(monTemperature) + ",");
         Serial.print("v:" + String(monVoltage) + ",");
-        Serial.print("i:UNKNOWN\n");
+        Serial.print("i:" + String(monCurrent) + ",");
+        Serial.print("ap:" + String(monAPower) + ",");
+        Serial.print("rp:" + String(monRPower) + ",");
+        Serial.print("pf:" + String(monPowerF) + "\n");
         break;
       default:
         Serial.print("error!");
