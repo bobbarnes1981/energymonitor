@@ -36,11 +36,11 @@ X V+ 8 -100 300 150 D 50 50 3 1 W
 ENDDRAW
 ENDDEF
 #
-# Connector_AudioJack3_Ground_SwitchTR
+# Connector_AudioJack3_SwitchTR
 #
-DEF Connector_AudioJack3_Ground_SwitchTR J 0 20 Y Y 1 F N
+DEF Connector_AudioJack3_SwitchTR J 0 20 Y Y 1 F N
 F0 "J" 0 350 50 H V C CNN
-F1 "Connector_AudioJack3_Ground_SwitchTR" 0 250 50 H V C CNN
+F1 "Connector_AudioJack3_SwitchTR" 0 250 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -56,7 +56,6 @@ P 4 0 1 0 100 -300 70 -300 70 -210 60 -230 N
 P 4 0 1 0 100 -100 20 -100 20 -10 10 -30 N
 P 5 0 1 10 -75 -200 -50 -225 -25 -200 -25 0 100 0 N
 P 5 0 1 10 100 100 -100 100 -100 -200 -125 -225 -150 -200 N
-X ~ G 0 -500 100 U 50 50 1 1 P
 X ~ R 200 0 100 L 50 50 1 1 P
 X ~ RN 200 -100 100 L 50 50 1 1 P
 X ~ S 200 100 100 L 50 50 1 1 P
