@@ -90,7 +90,7 @@ void updateLcd() {
   lcd.print(String(monCurrent) + "A");
 
   lcd.setCursor(8, 0);
-  lcd.print(String(monAPower) + "W");
+  lcd.print(String(monRPower) + "W");
 }
 
 void loop() {
