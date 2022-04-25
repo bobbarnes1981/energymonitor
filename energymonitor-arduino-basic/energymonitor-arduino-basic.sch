@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector:AudioJack3_Ground_SwitchTR J2
+L Connector:AudioJack3_SwitchTR J2
 U 1 1 6260899F
 P 2250 1400
 F 0 "J2" H 2232 1725 50  0000 C CNN
@@ -27,16 +27,14 @@ $EndComp
 $Comp
 L power:GND #PWR0103
 U 1 1 6260B66F
-P 2250 2150
-F 0 "#PWR0103" H 2250 1900 50  0001 C CNN
-F 1 "GND" H 2255 1977 50  0000 C CNN
-F 2 "" H 2250 2150 50  0001 C CNN
-F 3 "" H 2250 2150 50  0001 C CNN
-	1    2250 2150
+P 2800 2000
+F 0 "#PWR0103" H 2800 1750 50  0001 C CNN
+F 1 "GND" H 2805 1827 50  0000 C CNN
+F 2 "" H 2800 2000 50  0001 C CNN
+F 3 "" H 2800 2000 50  0001 C CNN
+	1    2800 2000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2250 2150 2250 2000
 $Comp
 L Device:R R3
 U 1 1 6260C8A0
@@ -56,11 +54,6 @@ Wire Wire Line
 	2450 1700 2800 1700
 Wire Wire Line
 	2800 1700 2800 2000
-Wire Wire Line
-	2800 2000 2250 2000
-Connection ~ 2250 2000
-Wire Wire Line
-	2250 2000 2250 1900
 NoConn ~ 2450 1400
 NoConn ~ 2450 1500
 Connection ~ 2800 1600
