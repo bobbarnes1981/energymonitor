@@ -585,4 +585,15 @@ Text Notes 1100 2300 2    50   ~ 0
 TODO: 3V3 REG
 Text Notes 6000 1750 2    50   ~ 0
 TODO: 1WIRE FOR TEMPERATURE SENSOR
+$Comp
+L Regulator_Linear:MCP1700-3302E_TO92 U?
+U 1 1 62682D7D
+P 3550 1650
+F 0 "U?" H 3550 1501 50  0000 C CNN
+F 1 "MCP1700-3302E_TO92" H 3550 1410 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3550 1450 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001826D.pdf" H 3550 1650 50  0001 C CNN
+	1    3550 1650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
