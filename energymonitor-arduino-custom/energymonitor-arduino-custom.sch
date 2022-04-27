@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Microchip_ATmega:ATmega328-PU U?
+L MCU_Microchip_ATmega:ATmega328-PU U1
 U 1 1 626639E5
 P 1850 3500
-F 0 "U?" H 1206 3546 50  0000 R CNN
+F 0 "U1" H 1206 3546 50  0000 R CNN
 F 1 "ATmega328-PU" H 1206 3455 50  0000 R CNN
 F 2 "Package_DIP:DIP-28_W7.62mm" H 1850 3500 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 1850 3500 50  0001 C CNN
@@ -25,10 +25,10 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20w
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x03_Odd_Even J?
+L Connector_Generic:Conn_02x03_Odd_Even J8
 U 1 1 6266524A
 P 8900 3200
-F 0 "J?" H 8950 3517 50  0000 C CNN
+F 0 "J8" H 8950 3517 50  0000 C CNN
 F 1 "Conn_02x03_Odd_Even" H 8950 3426 50  0000 C CNN
 F 2 "" H 8900 3200 50  0001 C CNN
 F 3 "~" H 8900 3200 50  0001 C CNN
@@ -36,10 +36,10 @@ F 3 "~" H 8900 3200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x05_Male J?
+L Connector:Conn_01x05_Male J6
 U 1 1 62665D2F
 P 8850 4300
-F 0 "J?" H 8822 4232 50  0000 R CNN
+F 0 "J6" H 8822 4232 50  0000 R CNN
 F 1 "Conn_01x06_Male" H 8822 4323 50  0000 R CNN
 F 2 "" H 8850 4300 50  0001 C CNN
 F 3 "~" H 8850 4300 50  0001 C CNN
@@ -51,10 +51,10 @@ ISP
 Text Notes 9000 4550 0    50   ~ 0
 FTDI
 $Comp
-L Connector:DB9_Female_MountingHoles J?
+L Connector:DB9_Female_MountingHoles J7
 U 1 1 62667C05
 P 8850 5350
-F 0 "J?" H 9030 5352 50  0000 L CNN
+F 0 "J7" H 9030 5352 50  0000 L CNN
 F 1 "DB9_Female_MountingHoles" H 9030 5261 50  0000 L CNN
 F 2 "" H 8850 5350 50  0001 C CNN
 F 3 " ~" H 8850 5350 50  0001 C CNN
@@ -64,10 +64,10 @@ $EndComp
 Text Notes 9150 5950 0    50   ~ 0
 Serial
 $Comp
-L Connector:Barrel_Jack_Switch J?
+L Connector:Barrel_Jack_Switch J1
 U 1 1 62670264
 P 3300 5700
-F 0 "J?" H 3357 6017 50  0000 C CNN
+F 0 "J1" H 3357 6017 50  0000 C CNN
 F 1 "Barrel_Jack_Switch" H 3357 5926 50  0000 C CNN
 F 2 "" H 3350 5660 50  0001 C CNN
 F 3 "~" H 3350 5660 50  0001 C CNN
@@ -75,10 +75,10 @@ F 3 "~" H 3350 5660 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:AudioJack3_SwitchTR J?
+L Connector:AudioJack3_SwitchTR J2
 U 1 1 6267128C
 P 3350 6500
-F 0 "J?" H 3332 6825 50  0000 C CNN
+F 0 "J2" H 3332 6825 50  0000 C CNN
 F 1 "AudioJack3_SwitchTR" H 3332 6734 50  0000 C CNN
 F 2 "" H 3350 6500 50  0001 C CNN
 F 3 "~" H 3350 6500 50  0001 C CNN
@@ -103,10 +103,10 @@ $EndComp
 Wire Wire Line
 	1850 5000 1850 5200
 $Comp
-L Amplifier_Operational:LM358 U?
+L Amplifier_Operational:LM358 U3
 U 1 1 62674131
 P 5250 3100
-F 0 "U?" H 5250 3467 50  0000 C CNN
+F 0 "U3" H 5250 3467 50  0000 C CNN
 F 1 "LM358" H 5250 3376 50  0000 C CNN
 F 2 "" H 5250 3100 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 5250 3100 50  0001 C CNN
@@ -114,10 +114,10 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 5250 3100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:LM358 U?
+L Amplifier_Operational:LM358 U3
 U 2 1 62674F47
 P 6900 5900
-F 0 "U?" H 6900 6267 50  0000 C CNN
+F 0 "U3" H 6900 6267 50  0000 C CNN
 F 1 "LM358" H 6900 6176 50  0000 C CNN
 F 2 "" H 6900 5900 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 6900 5900 50  0001 C CNN
@@ -125,10 +125,10 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 6900 5900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Amplifier_Operational:LM358 U?
+L Amplifier_Operational:LM358 U3
 U 3 1 6267642A
 P 6050 5950
-F 0 "U?" H 6008 5996 50  0000 L CNN
+F 0 "U3" H 6008 5996 50  0000 L CNN
 F 1 "LM358" H 6008 5905 50  0000 L CNN
 F 2 "" H 6050 5950 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 6050 5950 50  0001 C CNN
@@ -184,10 +184,10 @@ midpoint
 Wire Wire Line
 	4700 3000 4950 3000
 $Comp
-L Device:R R?
+L Device:R R4
 U 1 1 626A0012
 P 4650 4150
-F 0 "R?" H 4720 4196 50  0000 L CNN
+F 0 "R4" H 4720 4196 50  0000 L CNN
 F 1 "R" H 4720 4105 50  0000 L CNN
 F 2 "" V 4580 4150 50  0001 C CNN
 F 3 "~" H 4650 4150 50  0001 C CNN
@@ -195,10 +195,10 @@ F 3 "~" H 4650 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R5
 U 1 1 626A098F
 P 4650 4650
-F 0 "R?" H 4720 4696 50  0000 L CNN
+F 0 "R5" H 4720 4696 50  0000 L CNN
 F 1 "R" H 4720 4605 50  0000 L CNN
 F 2 "" V 4580 4650 50  0001 C CNN
 F 3 "~" H 4650 4650 50  0001 C CNN
@@ -239,10 +239,10 @@ Connection ~ 4650 4400
 Wire Wire Line
 	4650 4400 4650 4300
 $Comp
-L Device:R R?
+L Device:R R3
 U 1 1 626A896A
 P 4100 6550
-F 0 "R?" H 4170 6596 50  0000 L CNN
+F 0 "R3" H 4170 6596 50  0000 L CNN
 F 1 "R" H 4170 6505 50  0000 L CNN
 F 2 "" V 4030 6550 50  0001 C CNN
 F 3 "~" H 4100 6550 50  0001 C CNN
@@ -254,10 +254,10 @@ arduino-a3
 Wire Wire Line
 	2700 3500 2450 3500
 $Comp
-L Device:R R?
+L Device:R R1
 U 1 1 626AFB1C
 P 3900 5600
-F 0 "R?" V 3693 5600 50  0000 C CNN
+F 0 "R1" V 3693 5600 50  0000 C CNN
 F 1 "R" V 3784 5600 50  0000 C CNN
 F 2 "" V 3830 5600 50  0001 C CNN
 F 3 "~" H 3900 5600 50  0001 C CNN
@@ -265,10 +265,10 @@ F 3 "~" H 3900 5600 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R2
 U 1 1 626B04A8
 P 3900 5800
-F 0 "R?" V 3693 5800 50  0000 C CNN
+F 0 "R2" V 3693 5800 50  0000 C CNN
 F 1 "R" V 3784 5800 50  0000 C CNN
 F 2 "" V 3830 5800 50  0001 C CNN
 F 3 "~" H 3900 5800 50  0001 C CNN
@@ -325,10 +325,10 @@ Wire Wire Line
 Text Notes 9350 2150 0    50   ~ 0
 I2C LCD
 $Comp
-L Connector:Conn_01x04_Male J?
+L Connector:Conn_01x04_Male J5
 U 1 1 626C3FC6
 P 8850 2150
-F 0 "J?" H 8822 2032 50  0000 R CNN
+F 0 "J5" H 8822 2032 50  0000 R CNN
 F 1 "Conn_01x04_Male" H 8822 2123 50  0000 R CNN
 F 2 "" H 8850 2150 50  0001 C CNN
 F 3 "~" H 8850 2150 50  0001 C CNN
@@ -408,10 +408,10 @@ Wire Wire Line
 Wire Wire Line
 	8650 4100 8450 4100
 $Comp
-L Connector:Conn_01x02_Male J?
+L Connector:Conn_01x02_Male J3
 U 1 1 626D596B
 P 6350 4450
-F 0 "J?" H 6458 4631 50  0000 C CNN
+F 0 "J3" H 6458 4631 50  0000 C CNN
 F 1 "Conn_01x02_Male" H 6458 4540 50  0000 C CNN
 F 2 "" H 6350 4450 50  0001 C CNN
 F 3 "~" H 6350 4450 50  0001 C CNN
@@ -462,10 +462,10 @@ Wire Wire Line
 Wire Wire Line
 	4100 6800 4100 6950
 $Comp
-L Device:CP C?
+L Device:CP C1
 U 1 1 626FEB22
 P 5100 4700
-F 0 "C?" H 5218 4746 50  0000 L CNN
+F 0 "C1" H 5218 4746 50  0000 L CNN
 F 1 "CP" H 5218 4655 50  0000 L CNN
 F 2 "" H 5138 4550 50  0001 C CNN
 F 3 "~" H 5100 4700 50  0001 C CNN
@@ -551,10 +551,10 @@ TXD
 Text Label 8300 5550 2    50   ~ 0
 DTR
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0113
 U 1 1 62739103
 P 8300 5950
-F 0 "#PWR?" H 8300 5700 50  0001 C CNN
+F 0 "#PWR0113" H 8300 5700 50  0001 C CNN
 F 1 "GND" H 8305 5777 50  0000 C CNN
 F 2 "" H 8300 5950 50  0001 C CNN
 F 3 "" H 8300 5950 50  0001 C CNN
@@ -586,14 +586,25 @@ TODO: 3V3 REG
 Text Notes 6000 1750 2    50   ~ 0
 TODO: 1WIRE FOR TEMPERATURE SENSOR
 $Comp
-L Regulator_Linear:MCP1700-3302E_TO92 U?
+L Regulator_Linear:MCP1700-3302E_TO92 U2
 U 1 1 62682D7D
 P 3550 1650
-F 0 "U?" H 3550 1501 50  0000 C CNN
+F 0 "U2" H 3550 1501 50  0000 C CNN
 F 1 "MCP1700-3302E_TO92" H 3550 1410 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3550 1450 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20001826D.pdf" H 3550 1650 50  0001 C CNN
 	1    3550 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Raspberry_Pi_2_3 J4
+U 1 1 626A86DC
+P 7050 1950
+F 0 "J4" H 7050 3431 50  0000 C CNN
+F 1 "Raspberry_Pi_2_3" H 7050 3340 50  0000 C CNN
+F 2 "" H 7050 1950 50  0001 C CNN
+F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_3bplus_1p0_reduced.pdf" H 7050 1950 50  0001 C CNN
+	1    7050 1950
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
